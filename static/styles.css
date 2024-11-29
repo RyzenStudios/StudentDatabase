@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;500;600&display=swap');
+
+/* General Styles */
+body {
+    font-family: 'Overpass', sans-serif;
+    /* Use Poppins font */
+    margin: 0;
+    padding: 0;
+    /* Dark background */
+    color: #e0e0e0;
+    line-height: 1.6;
+
+    background-color: #1d1f29;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.116) 2px, transparent 0);
+    background-size: 30px 30px;
+    background-position: -5px -5px
+}
+
+
+h1,
+h2,
+h3 {
+    color: #ecf0f1;
+}
+
+a {
+    text-decoration: none;
+    color: #b6e2ff;
+}
+
+a:hover {
+    color: #2980b9;
+}
+
+h1 {
+    text-align: center;
+    padding: 25px 20px;
+    background: linear-gradient(135deg, #12161f, #1c2331, #111825);
+    color: #f4f4f4;
+    margin: 0;
+    border-bottom: 1px solid #eafaff49;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #2c3e50;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+}
+
+.user-info {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+ul li {
+    margin: 0;
+}
+
+ul li button {
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #343746;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+ul li button:hover {
+    background-color: #2c5bdb;
+    box-shadow: 0px 15px 20px rgba(46, 119, 229, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+
+ul li button:active {
+    transform: translateY(-1px);
+
+}
+
+form {
+    text-align: center;
+    margin: 30px 0;
+}
+
+select {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #34495e;
+    margin-right: 15px;
+    background-color: #2c3e50;
+    color: #dadada;
+}
+
+select:hover {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #34495e;
+    margin-right: 15px;
+    background-color: #364b5f;
+    cursor: pointer;
+    color: #fff;
+}
+
+button[type="submit"] {
+    padding: 12px 25px;
+    background-color: #2c5bdb;
+    box-shadow: 0px 5px 20px rgba(46, 119, 229, 0.4);
+    text-transform: uppercase;
+    font-weight: bolder;
+    color: #d4d4d4;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #3868ec;
+    color: #ffffff;
+
+}
+
+
+.button {
+    background-color: #ffffff00;
+    color: #fff;
+    width: 8.5em;
+    height: 2.9em;
+    border: #3654ff 0.2em solid;
+    border-radius: 11px;
+    text-align: right;
+    transition: all 0.6s ease;
+}
+
+.button:hover {
+    background-color: #3654ff;
+    cursor: pointer;
+}
+
+.button svg {
+    width: 1.6em;
+    margin: -0.2em 0.8em 1em;
+    position: absolute;
+    display: flex;
+    transition: all 0.6s ease;
+}
+
+.button:hover svg {
+    transform: translateX(5px);
+}
+
+.text {
+    margin: 0 1.5em
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+}
+
+th,
+td {
+    border: 1px solid #34495e;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: rgb(28, 29, 43);
+    color: #7587af;
+    font-size: 20px;
+}
+
+tr:nth-child(even) {
+    background-color: #222736;
+    color: #f0f0f0;
+
+}
+
+tr:nth-child(odd) {
+    background-color: #1d212e;
+    color: #f0f0f0;
+
+}
+
+tr:nth-child(even):hover {
+    background-color: #1c202cec;
+    color: #cccccc;
+
+}
+
+tr:nth-child(odd):hover {
+    background-color: #191d29de;
+    color: #d3d3d3;
+
+}
+
+
+.footer-links {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.footer-links a {
+    margin: 0 15px;
+    color: #3498db;
+    font-weight: bold;
+}
+
+.footer-links a:hover {
+    color: #2980b9;
+}
+
+
+textarea {
+    background-color: rgb(36, 37, 46);
+    color: #e0e0e0;
+    border: 1px solid #55555554;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 16px;
+    width: 50%;
+    margin-top: 20px;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #cbe6e354;
+    background-color: #28292ba4;
+}
+
+button {
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}

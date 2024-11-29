@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>Course Enrollment Dashboard</title>
+</head>
+
+<body>
+    <h1>Course Enrollment Dashboard</h1>
+
+    <p>Logged in as: {{ username }}</p>
+
+    <h3>Choose a table to view:</h3>
+    <ul>
+        <li><a href="{{ url_for('view_table', table_name='COURSES') }}"><button>View COURSES</button></a></li>
+        <li><a href="{{ url_for('view_table', table_name='DEPARTMENT') }}"><button>View DEPARTMENT</button></a></li>
+        <li><a href="{{ url_for('view_table', table_name='ENROLLMENT') }}"><button>View ENROLLMENT</button></a></li>
+        <li><a href="{{ url_for('view_table', table_name='PREREQUISITE') }}"><button>View PREREQUISITE</button></a></li>
+        <li><a href="{{ url_for('view_table', table_name='PROFESSOR') }}"><button>View PROFESSOR</button></a></li>
+        <li><a href="{{ url_for('view_table', table_name='SECTION') }}"><button>View SECTION</button></a></li>
+        <li><a href="{{ url_for('view_table', table_name='STUDENT') }}"><button>View STUDENT</button></a></li>
+    </ul>
+
+    <h2>Select an Operation for {{ table_name }}</h2>
+    <form action="{{ url_for('execute') }}" method="post">
+        <input type="hidden" name="table_name" value="{{ table_name }}">
+        <label for="option">Choose an operation:</label>
+        <select name="option" id="option">
+            <option value="drop">Drop Table</option>
+            <option value="create">Create Table</option>
+            <option value="populate">Populate Table</option>
+            <option value="custom_query">Custom Query </option>
+            <option value="exit">Exit</option>
+        </select>
+        <label for="query_input">Enter Custom SQL Query:</label><br>
+        <textarea name="query_input" rows="4" cols="50"></textarea><br><br>
+        <p><small>Note: To execute a Custom Query, please select "Custom Query" from the dropdown before clicking
+                Execute.</small></p>
+
+
+        <button type="submit" name="option" value="query">Execute</button>
+    </form>
+    {% if result %}
+    <h3>Result:</h3>
+    <p>{{ result|safe }}</p>
+    {% endif %}
+
+
+
+
+    {% if table_name %}
+    <h3>Data from {{ table_name }} table:</h3>
+    <table border="1">
+        <tr>
+            {% for column in columns %}
+            <th>{{ column }}</th>
+            {% endfor %}
+        </tr>
+        {% for row in data %}
+        <tr>
+            {% for column in row %}
+            <td>{{ column }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>No data to display. Select a table to view.</p>
+    {% endif %}
+
+    <br>
+
+</body>
+<footer>
+    <p><strong>Authors:</strong> Mohamed Eltaib, Mohamed Shrief, Muhammad Muaz</p>
+</footer>
+
+</html>
